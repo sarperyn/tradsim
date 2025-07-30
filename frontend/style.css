@@ -67,3 +67,34 @@ button:hover {
   box-shadow: 0 2px 8px rgba(0,0,0,0.05);
   overflow: hidden;
 }
+
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #1e1e2f;
+  color: #fff;
+  padding: 1rem 2rem;
+  font-family: 'Segoe UI', sans-serif;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.logo {
+  font-size: 1.4rem;
+  font-weight: bold;
+}
+
+.nav {
+  display: flex;
+  gap: 1.2rem;
+}
+
+.nav-link {
+  color: #cfcfcf;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.nav-link:hover {
+  color: #fff;
+}
