@@ -1,6 +1,9 @@
 // binanceApi.js
 
-import { renderCandlestickChart } from '../charts/candleCharts.js';
+//import { renderCandlestickChart } from '../charts/candleCharts.js';
+import { renderCandleChart } from '../charts/candleCharts.js';
+//import { renderVolumeChart } from '../charts/volumeCharts.js';
+
 
 export async function fetchKlines() {
   const symbol = document.getElementById("symbol").value;
@@ -28,7 +31,8 @@ export async function fetchKlines() {
       EMA_100: parseFloat(row.EMA_100)
     }));
 
-    renderCandlestickChart(candlesticks);
+    //renderCandlestickChart(candlesticks);
+    renderCandleChart(candlesticks);
   } catch (err) {
     alert("Failed to fetch data: " + err);
   }
