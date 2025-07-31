@@ -3,6 +3,7 @@
 import { createHeader } from "./components/header.js";
 import { renderViewer } from "./views/viewer.js";
 import { renderAbout } from "./views/about.js";
+import { renderBacktesting } from "./views/backtesting.js"
 
 // window.addEventListener("DOMContentLoaded", () => {
 //   setupViewerUI();
@@ -16,6 +17,7 @@ const routes = {
   "/": renderViewer,
   "/viewer": renderViewer,
   "/about": renderAbout,
+  "/backtesting": renderBacktesting,
 };
 
 function navigateTo(url) {
