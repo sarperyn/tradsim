@@ -98,3 +98,22 @@ button:hover {
 .nav-link:hover {
   color: #fff;
 }
+
+#trade-results {
+  margin-top: 30px;
+}
+
+#trade-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+#trade-table th, #trade-table td {
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  text-align: center;
+}
+
+#summary p {
+  margin: 4px 0;
+}

@@ -1,4 +1,5 @@
 // views/viewer.js
+import { renderCandleChart } from '../charts/candleCharts.js';
 import { fetchKlines } from '../services/binanceApi.js';
 
 export function renderViewer() {
@@ -44,5 +45,17 @@ export function renderViewer() {
   `;
 
   // Attach the fetch handler
-  document.getElementById("fetch-button").addEventListener("click", fetchKlines);
+  document.getElementById("fetch-button").addEventListener("click", async () => {
+  const symbol = document.getElementById("symbol").value;
+  const interval = document.getElementById("interval").value;
+  const startStr = document.getElementById("start_str").value;
+  const endStr = document.getElementById("end_str").value;
+
+  try{
+    const data = await fetchKlines(symbol, interval, startStr, endStr);
+    renderCandleChart(data);
+  } catch(err){
+    alert("Error: " + err.message);
+    }
+  });
 }
