@@ -63,7 +63,7 @@ export function renderBacktesting(){
 
       const trades = runEMACrossStrategy(data);
       updateTradeTable(trades);
-      console.log("Trades:", trades);
+      //console.log("Trades:", trades);
 
     } catch (err) {
       alert("Backtesting data fetch failed: " + err.message);
