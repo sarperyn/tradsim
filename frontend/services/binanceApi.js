@@ -5,12 +5,7 @@ import { renderCandleChart } from '../charts/candleCharts.js';
 //import { renderVolumeChart } from '../charts/volumeCharts.js';
 
 
-export async function fetchKlines() {
-  const symbol = document.getElementById("symbol").value;
-  const interval = document.getElementById("interval").value;
-  const startStr = document.getElementById("start_str").value;
-  const endStr = document.getElementById("end_str").value;
-
+export async function fetchKlines(symbol, interval, startStr, endStr) {
   let url = `/klines?symbol=${symbol}&interval=${interval}&start_str=${startStr}`;
   if (endStr) url += `&end_str=${endStr}`;
 
@@ -31,8 +26,8 @@ export async function fetchKlines() {
       EMA_100: parseFloat(row.EMA_100)
     }));
 
-    //renderCandlestickChart(candlesticks);
-    renderCandleChart(candlesticks);
+    return candlesticks;
+
   } catch (err) {
     alert("Failed to fetch data: " + err);
   }
